@@ -1,0 +1,45 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('A 10x10x10 mm cube for unit testing STEP2SysMLv2'),'2;1');
+FILE_NAME('cube_ap203.stp','2026-06-11T00:00:00',('STEP2SysMLv2 Test'),(''),
+'STEP2SysMLv2 test harness','','');
+FILE_SCHEMA(('CONFIG_CONTROL_DESIGN'));
+ENDSEC;
+DATA;
+/* Geometric representation context */
+#1 = APPLICATION_PROTOCOL_DEFINITION('draft international standard',
+  'configuration_control_3d_design',1994,#2);
+#2 = APPLICATION_CONTEXT('configuration control design');
+#3 = PRODUCT_CONTEXT('',#2,'mechanical');
+#4 = PRODUCT('CUBE','Cube_10mm','A simple 10x10x10 mm cube',(#3));
+#5 = PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE('','',#4,
+  .NOT_KNOWN.);
+#6 = PRODUCT_DEFINITION('design','',#5,#7);
+#7 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
+#8 = PRODUCT_DEFINITION_SHAPE('','',#6);
+#9 = SHAPE_DEFINITION_REPRESENTATION(#8,#10);
+#10 = SHAPE_REPRESENTATION('',(#11),#12);
+#11 = AXIS2_PLACEMENT_3D('',#13,#14,#15);
+#12 = (GEOMETRIC_REPRESENTATION_CONTEXT(3)
+GLOBAL_UNCERTAINTY_ASSIGNED_CONTEXT((#16))
+GLOBAL_UNIT_ASSIGNED_CONTEXT((#17,#18,#19))
+REPRESENTATION_CONTEXT('Context #1','3D Context with UNIT and UNCERTAINTY'));
+#13 = CARTESIAN_POINT('',(0.,0.,0.));
+#14 = DIRECTION('',(0.,0.,1.));
+#15 = DIRECTION('',(1.,0.,0.));
+#16 = UNCERTAINTY_MEASURE_WITH_UNIT(LENGTH_MEASURE(0.001),#17,
+  'distance_accuracy_value','Confusion accuracy');
+#17 = (LENGTH_UNIT() NAMED_UNIT(*) SI_UNIT(.MILLI.,.METRE.));
+#18 = (NAMED_UNIT(*) PLANE_ANGLE_UNIT() SI_UNIT($,.RADIAN.));
+#19 = (NAMED_UNIT(*) SI_UNIT($,.STERADIAN.) SOLID_ANGLE_UNIT());
+/* Eight corner vertices of the 10x10x10 cube (mm) */
+#20 = CARTESIAN_POINT('V0',(0.,0.,0.));
+#21 = CARTESIAN_POINT('V1',(10.,0.,0.));
+#22 = CARTESIAN_POINT('V2',(10.,10.,0.));
+#23 = CARTESIAN_POINT('V3',(0.,10.,0.));
+#24 = CARTESIAN_POINT('V4',(0.,0.,10.));
+#25 = CARTESIAN_POINT('V5',(10.,0.,10.));
+#26 = CARTESIAN_POINT('V6',(10.,10.,10.));
+#27 = CARTESIAN_POINT('V7',(0.,10.,10.));
+ENDSEC;
+END-ISO-10303-21;

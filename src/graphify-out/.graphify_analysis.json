@@ -1,0 +1,180 @@
+{
+  "communities": {
+    "0": [
+      "geometry_boundingboxcalculator",
+      "geometry_boundingboxcalculator_boundingboxcalculator",
+      "geometry_boundingboxcalculator_boundingboxcalculator_compute",
+      "geometry_boundingboxcalculator_boundingboxcalculator_computeall",
+      "geometry_boundingboxcalculator_boundingboxcalculator_computefromvertices",
+      "geometry_inertiacalculator",
+      "geometry_inertiacalculator_inertiacalculator",
+      "geometry_inertiacalculator_inertiacalculator_compute",
+      "geometry_inertiacalculator_inertiacalculator_cuboidfallback"
+    ],
+    "1": [
+      "geometry_boundingbox",
+      "geometry_boundingbox_boundingbox",
+      "geometry_boundingbox_boundingbox_boundingbox",
+      "geometry_boundingbox_boundingbox_getcentre",
+      "geometry_boundingbox_boundingbox_getenvelopevolume",
+      "geometry_boundingbox_boundingbox_getsizex",
+      "geometry_boundingbox_boundingbox_getsizey",
+      "geometry_boundingbox_boundingbox_getsizez"
+    ],
+    "2": [
+      "geometry_masspropertiescalculator",
+      "geometry_masspropertiescalculator_masspropertiescalculator",
+      "geometry_masspropertiescalculator_masspropertiescalculator_centreofmass",
+      "geometry_masspropertiescalculator_masspropertiescalculator_compute",
+      "geometry_masspropertiescalculator_masspropertiescalculator_signedvolume",
+      "geometry_masspropertiescalculator_masspropertiescalculator_vertexcentroid"
+    ],
+    "3": [
+      "geometry_massproperties",
+      "geometry_massproperties_massproperties",
+      "geometry_massproperties_massproperties_hasdensity",
+      "geometry_massproperties_massproperties_hasmass",
+      "geometry_massproperties_massproperties_massproperties"
+    ],
+    "4": [
+      "step_part21textparseradapter",
+      "step_part21textparseradapter_buildentitymap",
+      "step_part21textparseradapter_findentitypointingto",
+      "step_part21textparseradapter_readfile",
+      "step_part21textparseradapter_resolveassemblytree"
+    ],
+    "5": [
+      "step_stepfileparser",
+      "step_stepfileparser_stepfileparser",
+      "step_stepfileparser_stepfileparser_parse",
+      "step_stepfileparser_stepfileparser_stepfileparser",
+      "step_stepfileparser_stepfileparser_withadapter"
+    ],
+    "6": [
+      "step_stepshape",
+      "step_stepshape_stepshape",
+      "step_stepshape_stepshape_gettrianglecount",
+      "step_stepshape_stepshape_getvertexcount",
+      "step_stepshape_stepshape_stepshape"
+    ],
+    "7": [
+      "geometry_inertiatensor",
+      "geometry_inertiatensor_inertiatensor",
+      "geometry_inertiatensor_inertiatensor_inertiatensor",
+      "geometry_inertiatensor_inertiatensor_toflatmatrix"
+    ],
+    "8": [
+      "step_stepproduct",
+      "step_stepproduct_stepproduct",
+      "step_stepproduct_stepproduct_isleaf",
+      "step_stepproduct_stepproduct_stepproduct"
+    ],
+    "9": [
+      "step_stubsteplibraryadapter",
+      "step_stubsteplibraryadapter_stubsteplibraryadapter",
+      "step_stubsteplibraryadapter_stubsteplibraryadapter_extractschema",
+      "step_stubsteplibraryadapter_stubsteplibraryadapter_readfile"
+    ],
+    "10": [
+      "step_stepdocument",
+      "step_stepdocument_stepdocument",
+      "step_stepdocument_stepdocument_stepdocument"
+    ],
+    "11": [
+      "step_steplibraryadapter",
+      "step_steplibraryadapter_steplibraryadapter",
+      "step_steplibraryadapter_steplibraryadapter_readfile"
+    ],
+    "12": [
+      "step_stepparseexception",
+      "step_stepparseexception_stepparseexception",
+      "step_stepparseexception_stepparseexception_stepparseexception"
+    ],
+    "13": [
+      "geometry_pmiextractor",
+      "geometry_pmiextractor_extract"
+    ],
+    "14": [
+      "server_viewerserver",
+      "server_viewerserver_main"
+    ],
+    "15": [
+      "geometry_pmiannotation"
+    ]
+  },
+  "cohesion": {
+    "0": 0.3055555555555556,
+    "1": 0.25,
+    "2": 0.5333333333333333,
+    "3": 0.4,
+    "4": 0.7,
+    "5": 0.4,
+    "6": 0.4,
+    "7": 0.5,
+    "8": 0.5,
+    "9": 0.6666666666666666,
+    "10": 0.6666666666666666,
+    "11": 0.6666666666666666,
+    "12": 0.6666666666666666,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0
+  },
+  "gods": [
+    {
+      "id": "geometry_boundingbox_boundingbox",
+      "label": "BoundingBox",
+      "degree": 7
+    },
+    {
+      "id": "geometry_masspropertiescalculator_masspropertiescalculator",
+      "label": "MassPropertiesCalculator",
+      "degree": 5
+    },
+    {
+      "id": "geometry_boundingboxcalculator_boundingboxcalculator",
+      "label": "BoundingBoxCalculator",
+      "degree": 4
+    },
+    {
+      "id": "geometry_massproperties_massproperties",
+      "label": "MassProperties",
+      "degree": 4
+    },
+    {
+      "id": "step_part21textparseradapter_readfile",
+      "label": "readFile()",
+      "degree": 4
+    },
+    {
+      "id": "step_stepfileparser_stepfileparser",
+      "label": "StepFileParser",
+      "degree": 4
+    },
+    {
+      "id": "step_stepshape_stepshape",
+      "label": "StepShape",
+      "degree": 4
+    },
+    {
+      "id": "geometry_inertiacalculator_inertiacalculator",
+      "label": "InertiaCalculator",
+      "degree": 3
+    },
+    {
+      "id": "geometry_inertiatensor_inertiatensor",
+      "label": "InertiaTensor",
+      "degree": 3
+    },
+    {
+      "id": "step_part21textparseradapter_resolveassemblytree",
+      "label": "resolveAssemblyTree()",
+      "degree": 3
+    }
+  ],
+  "surprises": [],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

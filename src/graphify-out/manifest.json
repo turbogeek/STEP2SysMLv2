@@ -1,0 +1,87 @@
+{
+  "main/groovy/geometry/BoundingBox.groovy": {
+    "mtime": 1781186906.294144,
+    "ast_hash": "2c25670d68413439b49f066af03451cd",
+    "semantic_hash": "2c25670d68413439b49f066af03451cd"
+  },
+  "main/groovy/geometry/BoundingBoxCalculator.groovy": {
+    "mtime": 1781187291.2947595,
+    "ast_hash": "39b5429c824bf9e5492899131f646ff1",
+    "semantic_hash": "39b5429c824bf9e5492899131f646ff1"
+  },
+  "main/groovy/geometry/InertiaCalculator.groovy": {
+    "mtime": 1781187838.890445,
+    "ast_hash": "6a030c991530cd924c7f30900f91b72e",
+    "semantic_hash": "6a030c991530cd924c7f30900f91b72e"
+  },
+  "main/groovy/geometry/InertiaTensor.groovy": {
+    "mtime": 1781187374.069995,
+    "ast_hash": "eefdca2bbd59c387a886e1abee94e0ae",
+    "semantic_hash": "eefdca2bbd59c387a886e1abee94e0ae"
+  },
+  "main/groovy/geometry/MassProperties.groovy": {
+    "mtime": 1781186936.431459,
+    "ast_hash": "38ebd5a5baf08aa8d63c5e9504850358",
+    "semantic_hash": "38ebd5a5baf08aa8d63c5e9504850358"
+  },
+  "main/groovy/geometry/MassPropertiesCalculator.groovy": {
+    "mtime": 1781187177.3655128,
+    "ast_hash": "5540126a6db76b1de3d6934fc1cd9110",
+    "semantic_hash": "5540126a6db76b1de3d6934fc1cd9110"
+  },
+  "main/groovy/geometry/PmiAnnotation.groovy": {
+    "mtime": 1781187423.982907,
+    "ast_hash": "15c95fd31dcdabcdef175f32ab10d453",
+    "semantic_hash": "15c95fd31dcdabcdef175f32ab10d453"
+  },
+  "main/groovy/geometry/PmiExtractor.groovy": {
+    "mtime": 1781187456.9165704,
+    "ast_hash": "6455a048ad12cbb435c39f77668b9579",
+    "semantic_hash": "6455a048ad12cbb435c39f77668b9579"
+  },
+  "main/groovy/server/ViewerServer.groovy": {
+    "mtime": 1781206166.229453,
+    "ast_hash": "b5055ada47d06ac47842aad8175e7a65",
+    "semantic_hash": "b5055ada47d06ac47842aad8175e7a65"
+  },
+  "main/groovy/step/Part21TextParserAdapter.groovy": {
+    "mtime": 1781191793.2084835,
+    "ast_hash": "b394daeb2dc0f57b0f3d8199f8f77c59",
+    "semantic_hash": "b394daeb2dc0f57b0f3d8199f8f77c59"
+  },
+  "main/groovy/step/StepDocument.groovy": {
+    "mtime": 1781186816.351848,
+    "ast_hash": "2f84630d0554ce3ea654736ef79db31f",
+    "semantic_hash": "2f84630d0554ce3ea654736ef79db31f"
+  },
+  "main/groovy/step/StepFileParser.groovy": {
+    "mtime": 1781191680.034145,
+    "ast_hash": "8c7b7968f46a28065b3291b78f6d15e4",
+    "semantic_hash": "8c7b7968f46a28065b3291b78f6d15e4"
+  },
+  "main/groovy/step/StepLibraryAdapter.groovy": {
+    "mtime": 1781186855.075279,
+    "ast_hash": "2ff16a8229a7f1cabba6653ff0911c1e",
+    "semantic_hash": "2ff16a8229a7f1cabba6653ff0911c1e"
+  },
+  "main/groovy/step/StepParseException.groovy": {
+    "mtime": 1781186896.1110952,
+    "ast_hash": "e04c02e8f595ab91c5dd1c95002c8c82",
+    "semantic_hash": "e04c02e8f595ab91c5dd1c95002c8c82"
+  },
+  "main/groovy/step/StepProduct.groovy": {
+    "mtime": 1781191706.702636,
+    "ast_hash": "734a3b772a710af2d2b087b317eb7687",
+    "semantic_hash": "734a3b772a710af2d2b087b317eb7687"
+  },
+  "main/groovy/step/StepShape.groovy": {
+    "mtime": 1781187184.7509308,
+    "ast_hash": "008365d799c6272be6528eacec04e318",
+    "semantic_hash": "008365d799c6272be6528eacec04e318"
+  },
+  "main/groovy/step/StubStepLibraryAdapter.groovy": {
+    "mtime": 1781187245.527251,
+    "ast_hash": "573bece4d34128eb27be3dbd9d3bb380",
+    "semantic_hash": "573bece4d34128eb27be3dbd9d3bb380"
+  }
+}

@@ -1,0 +1,22 @@
+# Build outputs
+build/
+.gradle/
+out/
+
+# Library jars (place in lib/ but don't commit commercial/AGPL jars)
+lib/*.jar
+
+# Runtime outputs
+output/
+logs/
+deploy/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db

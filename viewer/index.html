@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>STEP Premium Viewer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #09090b;
+            --bg-panel: rgba(18, 18, 20, 0.75);
+            --bg-hover: rgba(255, 255, 255, 0.08);
+            --border: rgba(255, 255, 255, 0.08);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.3);
+            --radius: 12px;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: var(--bg-base);
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            outline: none;
+        }
+        
+        #ui-container {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            width: 360px;
+            max-height: calc(100vh - 48px);
+            background: var(--bg-panel);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .header {
+            padding: 24px 24px 16px;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+        }
+
+        h1 {
+            margin: 0 0 4px 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            background: linear-gradient(90deg, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p.subtitle {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 20px 24px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        input[type="text"]:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px var(--accent-glow);
+        }
+
+        button {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        button:hover {
+            background: var(--bg-hover);
+            transform: translateY(-1px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        button.primary {
+            background: var(--accent);
+            color: #000;
+            border: none;
+            font-weight: 600;
+            box-shadow: 0 4px 12px var(--accent-glow);
+        }
+        button.primary:hover {
+            background: #7dd3fc;
+            box-shadow: 0 6px 16px var(--accent-glow);
+        }
+
+        #file-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .file-item {
+            padding: 12px 14px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .file-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(4px);
+        }
+        .file-item.active {
+            background: var(--accent-glow);
+            border-color: var(--accent);
+        }
+        .file-icon {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        .file-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .upload-area {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px dashed var(--border);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        .upload-area:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-glow);
+        }
+
+        /* Assembly Tree */
+        .tree-panel {
+            margin-top: 8px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        .tree-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+        .tree-item input[type="checkbox"] {
+            accent-color: var(--accent);
+            cursor: pointer;
+        }
+        .tree-controls {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        .tree-controls button {
+            flex: 1;
+            padding: 6px 10px;
+            font-size: 0.75rem;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+        .stat-card {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 12px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .stat-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Loading Overlay */
+        #loader-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(9, 9, 11, 0.8);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        #loader-overlay.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid rgba(255,255,255,0.1);
+            border-left-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        #loader-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+        #loader-progress {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Error Toast */
+        #error-toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #ef4444;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 1000;
+        }
+        #error-toast.visible {
+            transform: translateX(-50%) translateY(0);
+        }
+
+    </style>
+    <!-- Local Dependencies -->
+    <script src="three.min.js"></script>
+    <script src="OrbitControls.js"></script>
+</head>
+<body>
+
+    <div id="loader-overlay">
+        <div class="spinner"></div>
+        <div id="loader-text">Loading Model...</div>
+        <div id="loader-progress"></div>
+    </div>
+
+    <div id="error-toast"></div>
+
+    <div id="ui-container">
+        <div class="header">
+            <h1>STEP Explorer</h1>
+            <p class="subtitle">High-performance WebGL geometry parser</p>
+        </div>
+
+        <div class="content">
+            <div class="form-group">
+                <label>Directory Path</label>
+                <div class="input-row">
+                    <input type="text" id="dir-input" value="test-data" placeholder="e.g. test-data/DassaultExports">
+                    <button onclick="loadDirectory()" class="primary">Load</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Direct File Upload</label>
+                <div class="upload-area" onclick="document.getElementById('local-file').click()">
+                    <span>Click here to browse local system directly</span>
+                    <input type="file" id="local-file" accept=".stp,.step" style="display:none;" onchange="loadLocalFile(event)">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Available Models</label>
+                <div id="file-list">
+                    <!-- Dynamic list inserted here -->
+                </div>
+            </div>
+
+            <div class="form-group" id="assembly-tree-group" style="display: none;">
+                <label>Assembly Tree</label>
+                <div class="tree-controls">
+                    <button onclick="toggleAllParts(true)">Show All</button>
+                    <button onclick="toggleOuterShellOnly()">Outer Shell Only</button>
+                </div>
+                <div class="tree-panel" id="assembly-tree-list">
+                    <!-- Checkboxes inserted here -->
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Meshes</span>
+                    <span class="stat-value" id="stat-meshes">-</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Triangles</span>
+                    <span class="stat-value" id="stat-triangles">-</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ── Globals ─────────────────────────────────────────────────────────
+        let currentGroup = null;
+        let gridHelper = null;
+        let axesHelper = null;
+
+        // ── Three.js Initialization ────────────────────────────────────────
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color('#09090b');
+        // Removed thick fog that obscured distant objects
+
+        // Improved CAD Lighting (Hemisphere + Dual Directional)
+        const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.6);
+        hemiLight.position.set(0, 200, 0);
+        scene.add(hemiLight);
+
+        const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        dirLight.position.set(1, 1, 1).normalize();
+        scene.add(dirLight);
+        
+        const dirLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
+        dirLight2.position.set(-1, 0.5, -1).normalize();
+        scene.add(dirLight2);
+
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000);
+        camera.position.set(100, 100, 100);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // cap at 2 for performance
+        document.body.appendChild(renderer.domElement);
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.5;
+
+        // Grid and Axes
+        gridHelper = new THREE.GridHelper(500, 100, 0x38bdf8, 0x1e293b);
+        gridHelper.material.opacity = 0.15;
+        gridHelper.material.transparent = true;
+        scene.add(gridHelper);
+
+        axesHelper = new THREE.AxesHelper(50);
+        scene.add(axesHelper);
+
+        // ── Functions ──────────────────────────────────────────────────────
+
+        function toggleAllParts(visible) {
+            if (!window.currentMeshInfos) return;
+            window.currentMeshInfos.forEach((info, idx) => {
+                info.mesh.visible = visible;
+                const cb = document.getElementById(`part-cb-${idx}`);
+                if (cb) cb.checked = visible;
+            });
+        }
+        
+        function toggleOuterShellOnly() {
+            if (!window.currentMeshInfos) return;
+            window.currentMeshInfos.forEach((info, idx) => {
+                info.mesh.visible = info.isShell;
+                const cb = document.getElementById(`part-cb-${idx}`);
+                if (cb) cb.checked = info.isShell;
+            });
+        }
+
+        function showError(msg) {
+            const toast = document.getElementById('error-toast');
+            toast.innerText = msg;
+            toast.classList.add('visible');
+            setTimeout(() => toast.classList.remove('visible'), 4000);
+        }
+
+        async function loadDirectory() {
+            const dir = document.getElementById('dir-input').value.trim() || 'test-data';
+            const listEl = document.getElementById('file-list');
+            listEl.innerHTML = '<div style="color: var(--text-secondary); font-size: 0.9rem; text-align: center; padding: 20px;">Loading...</div>';
+            
+            try {
+                const res = await fetch('/api/files?dir=' + encodeURIComponent(dir));
+                if (!res.ok) {
+                    throw new Error(await res.text());
+                }
+                const files = await res.json();
+                if(files.error) throw new Error(files.error);
+
+                if (files.length === 0) {
+                    listEl.innerHTML = '<div style="color: var(--text-secondary); font-size: 0.9rem; text-align: center; padding: 20px;">Empty Directory</div>';
+                    return;
+                }
+
+                listEl.innerHTML = '';
+                files.forEach(f => {
+                    const el = document.createElement('div');
+                    el.className = 'file-item';
+                    if (f.isDir) {
+                        el.innerHTML = '<span class="file-icon">📁</span><span class="file-name" title="'+f.name+'">' + f.name + '</span>';
+                        el.onclick = () => {
+                            document.getElementById('dir-input').value = f.path;
+                            loadDirectory();
+                        };
+                    } else {
+                        el.innerHTML = '<span class="file-icon">📄</span><span class="file-name" title="'+f.name+'">' + f.name + '</span>';
+                        el.onclick = () => loadModel(f.path, el);
+                    }
+                    listEl.appendChild(el);
+                });
+            } catch (err) {
+                listEl.innerHTML = '';
+                showError("Error: " + err.message);
+            }
+        }
+
+        async function loadModel(filePath, element) {
+            document.querySelectorAll('.file-item').forEach(el => el.classList.remove('active'));
+            if(element) element.classList.add('active');
+
+            const loader = document.getElementById('loader-overlay');
+            const progress = document.getElementById('loader-progress');
+            loader.classList.add('visible');
+            progress.innerText = 'Parsing assembly hierarchy...';
+            controls.autoRotate = false;
+
+            if (currentGroup) {
+                scene.remove(currentGroup);
+                currentGroup.children.forEach(child => {
+                    if (child.geometry) child.geometry.dispose();
+                    if (child.material) child.material.dispose();
+                });
+            }
+            currentGroup = new THREE.Group();
+            scene.add(currentGroup);
+            window.currentMeshInfos = [];
+            window.fullBoundingBox = new THREE.Box3();
+            document.getElementById('stat-meshes').innerText = '0';
+            document.getElementById('stat-triangles').innerText = '0';
+            window.totalTriangles = 0;
+
+            try {
+                // 1. Fetch Assembly Hierarchy (Instantly parsed by Groovy)
+                const res = await fetch('/api/load_assembly?file=' + encodeURIComponent(filePath));
+                if (!res.ok) throw new Error('Failed to load assembly hierarchy');
+                const hierarchy = await res.json();
+                
+                // 2. Build UI Tree immediately
+                const treeGroup = document.getElementById('assembly-tree-group');
+                const treeList = document.getElementById('assembly-tree-list');
+                treeGroup.style.display = 'flex';
+                treeList.innerHTML = '';
+                
+                // Flatten the hierarchy to get all parts that need geometry
+                const allParts = [];
+                function extractParts(node) {
+                    if (!node.children || node.children.length === 0) {
+                        allParts.push(node);
+                        
+                        // Add to UI early
+                        const item = document.createElement('div');
+                        item.className = 'tree-item';
+                        item.innerHTML = `
+                            <input type="checkbox" id="part-cb-${node.name}" checked>
+                            <label for="part-cb-${node.name}" style="text-transform:none; font-weight:400;">${node.name} (Loading...)</label>
+                        `;
+                        treeList.appendChild(item);
+                        node.uiLabel = item.querySelector('label');
+                        node.uiCheckbox = item.querySelector('input');
+                    } else {
+                        node.children.forEach(extractParts);
+                    }
+                }
+                hierarchy.products.forEach(extractParts);
+                loader.classList.remove('visible');
+
+                // 3. Stream geometries
+                for (let part of allParts) {
+                    streamPart(filePath, part.name, part);
+                }
+
+            } catch (err) {
+                loader.classList.remove('visible');
+                showError("Error: " + err.message);
+            }
+        }
+
+        async function streamPart(filePath, partName, partNode) {
+            let delay = 1000;
+            // Safe name equivalent to Groovy backend replacing
+            let safeName = partName.replace(/[^a-zA-Z0-9.-]/g, '_');
+            
+            while (true) {
+                try {
+                    const res = await fetch(`/api/stream_part?file=${encodeURIComponent(filePath)}&part=${encodeURIComponent(safeName)}`);
+                    if (res.status === 202) {
+                        // Still meshing, wait and poll
+                        await new Promise(r => setTimeout(r, delay));
+                        delay = Math.min(delay * 1.5, 5000);
+                        continue;
+                    }
+                    if (!res.ok) break;
+
+                    const geoData = await res.json();
+                    
+                    // Render Part
+                    const geometry = new THREE.BufferGeometry();
+                    geometry.setAttribute('position', new THREE.Float32BufferAttribute(geoData.position, 3));
+                    if (geoData.normal) {
+                        geometry.setAttribute('normal', new THREE.Float32BufferAttribute(geoData.normal, 3));
+                    }
+                    geometry.setIndex(new THREE.Uint32BufferAttribute(geoData.index, 1));
+                    
+                    const material = new THREE.MeshStandardMaterial({
+                        color: geoData.color || 0x38bdf8,
+                        metalness: 0.3,
+                        roughness: 0.4,
+                        side: THREE.DoubleSide
+                    });
+
+                    const mesh = new THREE.Mesh(geometry, material);
+                    mesh.name = partNode.name;
+                    currentGroup.add(mesh);
+                    
+                    geometry.computeBoundingBox();
+                    const bbox = geometry.boundingBox.clone();
+                    window.fullBoundingBox.union(bbox);
+                    
+                    const meshInfo = { mesh, bbox, isShell: true }; // Assume shell until all loaded to compute
+                    window.currentMeshInfos.push(meshInfo);
+                    
+                    window.totalTriangles += geoData.index.length / 3;
+                    document.getElementById('stat-meshes').innerText = window.currentMeshInfos.length.toLocaleString();
+                    document.getElementById('stat-triangles').innerText = window.totalTriangles.toLocaleString();
+
+                    // Update UI
+                    partNode.uiLabel.innerText = partNode.name;
+                    partNode.uiCheckbox.onchange = (e) => { meshInfo.mesh.visible = e.target.checked; };
+                    
+                    updateCameraAndBounds();
+                    break;
+                } catch (e) {
+                    console.error("Stream failed for " + partName, e);
+                    break;
+                }
+            }
+        }
+
+        function updateCameraAndBounds() {
+            const size = new THREE.Vector3();
+            window.fullBoundingBox.getSize(size);
+            const maxDim = Math.max(size.x, size.y, size.z);
+            if(maxDim === 0 || !isFinite(maxDim)) return;
+            
+            const center = new THREE.Vector3();
+            window.fullBoundingBox.getCenter(center);
+            
+            // Adjust Camera dynamically
+            camera.near = maxDim * 0.001;
+            camera.far = maxDim * 100;
+            camera.updateProjectionMatrix();
+
+            // Only snap camera if we haven't manually moved much, or just let autoRotate handle it
+            if (window.currentMeshInfos.length === 1) {
+                const fov = camera.fov * (Math.PI / 180);
+                let cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2)) * 1.3;
+                camera.position.set(center.x + maxDim * 0.8, center.y + maxDim * 0.5, center.z + cameraZ);
+                controls.target.copy(center);
+            }
+            controls.update();
+        }
+
+        function loadLocalFile(event) {
+            showError("Local file uploads require server upload endpoint in this architecture.");
+            event.target.value = '';
+        }
+
+        function renderGeometry(meshes) {
+            if (currentGroup) {
+                scene.remove(currentGroup);
+                // Dispose previous geometry to prevent memory leaks
+                currentGroup.children.forEach(child => {
+                    if (child.geometry) child.geometry.dispose();
+                    if (child.material) child.material.dispose();
+                });
+            }
+
+            currentGroup = new THREE.Group();
+            
+            if (!meshes || meshes.length === 0) {
+                scene.add(currentGroup);
+                document.getElementById('stat-meshes').innerText = '0';
+                document.getElementById('stat-triangles').innerText = '0';
+                showError("No solid meshes generated by OpenCASCADE. File may be empty or pure structure.");
+                return;
+            }
+
+            let totalTriangles = 0;
+            const fullBoundingBox = new THREE.Box3();
+            const meshInfos = [];
+
+            meshes.forEach((m, index) => {
+                const geometry = new THREE.BufferGeometry();
+                geometry.setAttribute('position', new THREE.Float32BufferAttribute(m.attributes.position.array, 3));
+                if (m.attributes.normal) {
+                    geometry.setAttribute('normal', new THREE.Float32BufferAttribute(m.attributes.normal.array, 3));
+                }
+                geometry.setIndex(new THREE.Uint32BufferAttribute(m.index.array, 1));
+                
+                // Advanced material mimicking metal/plastic
+                const material = new THREE.MeshStandardMaterial({
+                    color: m.color || 0x38bdf8,
+                    metalness: 0.3,
+                    roughness: 0.4,
+                    side: THREE.DoubleSide
+                });
+
+                const mesh = new THREE.Mesh(geometry, material);
+                mesh.name = m.name || `Part_${index + 1}`;
+                currentGroup.add(mesh);
+
+                geometry.computeBoundingBox();
+                const bbox = geometry.boundingBox.clone();
+                fullBoundingBox.union(bbox);
+                totalTriangles += m.index.array.length / 3;
+                
+                meshInfos.push({ mesh, bbox });
+            });
+
+            // 2. Identify Outer Shell
+            const size = new THREE.Vector3();
+            fullBoundingBox.getSize(size);
+            const maxDim = Math.max(size.x, size.y, size.z);
+            const tolerance = maxDim * 0.05; // 5% tolerance
+
+            meshInfos.forEach(info => {
+                const b = info.bbox;
+                const touchesMinX = Math.abs(b.min.x - fullBoundingBox.min.x) < tolerance;
+                const touchesMaxX = Math.abs(b.max.x - fullBoundingBox.max.x) < tolerance;
+                const touchesMinY = Math.abs(b.min.y - fullBoundingBox.min.y) < tolerance;
+                const touchesMaxY = Math.abs(b.max.y - fullBoundingBox.max.y) < tolerance;
+                const touchesMinZ = Math.abs(b.min.z - fullBoundingBox.min.z) < tolerance;
+                const touchesMaxZ = Math.abs(b.max.z - fullBoundingBox.max.z) < tolerance;
+                
+                info.isShell = touchesMinX || touchesMaxX || touchesMinY || touchesMaxY || touchesMinZ || touchesMaxZ;
+                info.mesh.visible = info.isShell;
+            });
+
+            // 3. Build UI Tree
+            const treeGroup = document.getElementById('assembly-tree-group');
+            const treeList = document.getElementById('assembly-tree-list');
+            treeGroup.style.display = 'flex';
+            treeList.innerHTML = '';
+            window.currentMeshInfos = meshInfos;
+
+            meshInfos.forEach((info, idx) => {
+                const item = document.createElement('div');
+                item.className = 'tree-item';
+                
+                const cb = document.createElement('input');
+                cb.type = 'checkbox';
+                cb.checked = info.mesh.visible;
+                cb.id = `part-cb-${idx}`;
+                cb.onchange = (e) => {
+                    info.mesh.visible = e.target.checked;
+                };
+                
+                const lbl = document.createElement('label');
+                lbl.htmlFor = cb.id;
+                lbl.innerText = info.mesh.name + (info.isShell ? ' [Shell]' : '');
+                lbl.style.textTransform = 'none';
+                lbl.style.fontWeight = '400';
+                lbl.style.color = info.isShell ? 'var(--accent)' : 'var(--text-primary)';
+                
+                item.appendChild(cb);
+                item.appendChild(lbl);
+                treeList.appendChild(item);
+            });
+
+            document.getElementById('stat-meshes').innerText = meshes.length.toLocaleString();
+            document.getElementById('stat-triangles').innerText = totalTriangles.toLocaleString();
+
+            // Center Model
+            const center = new THREE.Vector3();
+            fullBoundingBox.getCenter(center);
+            currentGroup.position.sub(center);
+
+            // Bounding Box visualizer
+            const boxHelper = new THREE.Box3Helper(fullBoundingBox, 0xffffff);
+            boxHelper.material.opacity = 0.1;
+            boxHelper.material.transparent = true;
+            // Add helper shifted so it bounds the group perfectly at origin
+            const helperGroup = new THREE.Group();
+            helperGroup.add(boxHelper);
+            helperGroup.position.sub(center);
+            currentGroup.add(helperGroup);
+
+            scene.add(currentGroup);
+
+            // Adjust Camera and dynamic clipping planes
+            // size and maxDim were already calculated above
+            
+            // Fix objects disappearing by scaling near/far planes based on model size
+            camera.near = maxDim * 0.001;
+            camera.far = maxDim * 100;
+            camera.updateProjectionMatrix();
+
+            const fov = camera.fov * (Math.PI / 180);
+            let cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2));
+            cameraZ *= 1.3; // Give a nice framing
+            camera.position.set(maxDim * 0.8, maxDim * 0.5, cameraZ);
+            camera.lookAt(0, 0, 0);
+            controls.target.set(0, 0, 0);
+            controls.update();
+
+            // Update Grid & Axes based on model scale to show world's plane
+            if (gridHelper) scene.remove(gridHelper);
+            if (axesHelper) scene.remove(axesHelper);
+            
+            // Create a grid scaled perfectly to the object
+            // We use powers of 10 to make the grid lines sensible (1, 10, 100, 1000...)
+            const gridSize = Math.pow(10, Math.ceil(Math.log10(maxDim))) * 2; 
+            gridHelper = new THREE.GridHelper(gridSize, 100, 0x444444, 0x222222);
+            gridHelper.position.y = -size.y / 2; // Floor it below the bounding box
+            scene.add(gridHelper);
+
+            axesHelper = new THREE.AxesHelper(maxDim);
+            axesHelper.position.y = -size.y / 2;
+            scene.add(axesHelper);       
+        }
+
+        // ── Animation Loop ─────────────────────────────────────────────────
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Init load
+        loadDirectory();
+    </script>
+</body>
+</html>

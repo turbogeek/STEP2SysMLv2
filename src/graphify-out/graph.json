@@ -1,0 +1,1364 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "BoundingBox.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "geometry_boundingbox",
+      "community": 1,
+      "norm_label": "boundingbox.groovy"
+    },
+    {
+      "label": "BoundingBox",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "geometry_boundingbox_boundingbox",
+      "community": 1,
+      "norm_label": "boundingbox"
+    },
+    {
+      "label": ".BoundingBox()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "geometry_boundingbox_boundingbox_boundingbox",
+      "community": 1,
+      "norm_label": ".boundingbox()"
+    },
+    {
+      "label": ".getSizeX()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "geometry_boundingbox_boundingbox_getsizex",
+      "community": 1,
+      "norm_label": ".getsizex()"
+    },
+    {
+      "label": ".getSizeY()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "geometry_boundingbox_boundingbox_getsizey",
+      "community": 1,
+      "norm_label": ".getsizey()"
+    },
+    {
+      "label": ".getSizeZ()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "geometry_boundingbox_boundingbox_getsizez",
+      "community": 1,
+      "norm_label": ".getsizez()"
+    },
+    {
+      "label": ".getEnvelopeVolume()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "geometry_boundingbox_boundingbox_getenvelopevolume",
+      "community": 1,
+      "norm_label": ".getenvelopevolume()"
+    },
+    {
+      "label": ".getCentre()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "geometry_boundingbox_boundingbox_getcentre",
+      "community": 1,
+      "norm_label": ".getcentre()"
+    },
+    {
+      "label": "BoundingBoxCalculator.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/BoundingBoxCalculator.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "geometry_boundingboxcalculator",
+      "community": 0,
+      "norm_label": "boundingboxcalculator.groovy"
+    },
+    {
+      "label": "BoundingBoxCalculator",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/BoundingBoxCalculator.groovy",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "geometry_boundingboxcalculator_boundingboxcalculator",
+      "community": 0,
+      "norm_label": "boundingboxcalculator"
+    },
+    {
+      "label": ".compute()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/BoundingBoxCalculator.groovy",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "geometry_boundingboxcalculator_boundingboxcalculator_compute",
+      "community": 0,
+      "norm_label": ".compute()"
+    },
+    {
+      "label": ".computeAll()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/BoundingBoxCalculator.groovy",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "geometry_boundingboxcalculator_boundingboxcalculator_computeall",
+      "community": 0,
+      "norm_label": ".computeall()"
+    },
+    {
+      "label": ".computeFromVertices()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/BoundingBoxCalculator.groovy",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "geometry_boundingboxcalculator_boundingboxcalculator_computefromvertices",
+      "community": 0,
+      "norm_label": ".computefromvertices()"
+    },
+    {
+      "label": "InertiaCalculator.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/InertiaCalculator.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "geometry_inertiacalculator",
+      "community": 0,
+      "norm_label": "inertiacalculator.groovy"
+    },
+    {
+      "label": "InertiaCalculator",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/InertiaCalculator.groovy",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "geometry_inertiacalculator_inertiacalculator",
+      "community": 0,
+      "norm_label": "inertiacalculator"
+    },
+    {
+      "label": ".compute()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/InertiaCalculator.groovy",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "geometry_inertiacalculator_inertiacalculator_compute",
+      "community": 0,
+      "norm_label": ".compute()"
+    },
+    {
+      "label": ".cuboidFallback()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/InertiaCalculator.groovy",
+      "source_location": "L99",
+      "_origin": "ast",
+      "id": "geometry_inertiacalculator_inertiacalculator_cuboidfallback",
+      "community": 0,
+      "norm_label": ".cuboidfallback()"
+    },
+    {
+      "label": "InertiaTensor.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/InertiaTensor.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "geometry_inertiatensor",
+      "community": 7,
+      "norm_label": "inertiatensor.groovy"
+    },
+    {
+      "label": "InertiaTensor",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/InertiaTensor.groovy",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "geometry_inertiatensor_inertiatensor",
+      "community": 7,
+      "norm_label": "inertiatensor"
+    },
+    {
+      "label": ".InertiaTensor()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/InertiaTensor.groovy",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "geometry_inertiatensor_inertiatensor_inertiatensor",
+      "community": 7,
+      "norm_label": ".inertiatensor()"
+    },
+    {
+      "label": ".toFlatMatrix()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/InertiaTensor.groovy",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "geometry_inertiatensor_inertiatensor_toflatmatrix",
+      "community": 7,
+      "norm_label": ".toflatmatrix()"
+    },
+    {
+      "label": "MassProperties.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/MassProperties.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "geometry_massproperties",
+      "community": 3,
+      "norm_label": "massproperties.groovy"
+    },
+    {
+      "label": "MassProperties",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/MassProperties.groovy",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "geometry_massproperties_massproperties",
+      "community": 3,
+      "norm_label": "massproperties"
+    },
+    {
+      "label": ".MassProperties()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/MassProperties.groovy",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "geometry_massproperties_massproperties_massproperties",
+      "community": 3,
+      "norm_label": ".massproperties()"
+    },
+    {
+      "label": ".hasMass()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/MassProperties.groovy",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "geometry_massproperties_massproperties_hasmass",
+      "community": 3,
+      "norm_label": ".hasmass()"
+    },
+    {
+      "label": ".hasDensity()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/MassProperties.groovy",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "geometry_massproperties_massproperties_hasdensity",
+      "community": 3,
+      "norm_label": ".hasdensity()"
+    },
+    {
+      "label": "MassPropertiesCalculator.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "geometry_masspropertiescalculator",
+      "community": 2,
+      "norm_label": "masspropertiescalculator.groovy"
+    },
+    {
+      "label": "MassPropertiesCalculator",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "geometry_masspropertiescalculator_masspropertiescalculator",
+      "community": 2,
+      "norm_label": "masspropertiescalculator"
+    },
+    {
+      "label": ".compute()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "geometry_masspropertiescalculator_masspropertiescalculator_compute",
+      "community": 2,
+      "norm_label": ".compute()"
+    },
+    {
+      "label": ".signedVolume()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L88",
+      "_origin": "ast",
+      "id": "geometry_masspropertiescalculator_masspropertiescalculator_signedvolume",
+      "community": 2,
+      "norm_label": ".signedvolume()"
+    },
+    {
+      "label": ".centreOfMass()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L108",
+      "_origin": "ast",
+      "id": "geometry_masspropertiescalculator_masspropertiescalculator_centreofmass",
+      "community": 2,
+      "norm_label": ".centreofmass()"
+    },
+    {
+      "label": ".vertexCentroid()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L130",
+      "_origin": "ast",
+      "id": "geometry_masspropertiescalculator_masspropertiescalculator_vertexcentroid",
+      "community": 2,
+      "norm_label": ".vertexcentroid()"
+    },
+    {
+      "label": "PmiAnnotation.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/PmiAnnotation.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "geometry_pmiannotation",
+      "community": 15,
+      "norm_label": "pmiannotation.groovy"
+    },
+    {
+      "label": "PmiExtractor.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/PmiExtractor.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "geometry_pmiextractor",
+      "community": 13,
+      "norm_label": "pmiextractor.groovy"
+    },
+    {
+      "label": "extract()",
+      "file_type": "code",
+      "source_file": "main/groovy/geometry/PmiExtractor.groovy",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "geometry_pmiextractor_extract",
+      "community": 13,
+      "norm_label": "extract()"
+    },
+    {
+      "label": "ViewerServer.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/server/ViewerServer.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "server_viewerserver",
+      "community": 14,
+      "norm_label": "viewerserver.groovy"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "main/groovy/server/ViewerServer.groovy",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "server_viewerserver_main",
+      "community": 14,
+      "norm_label": "main()"
+    },
+    {
+      "label": "Part21TextParserAdapter.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/step/Part21TextParserAdapter.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "step_part21textparseradapter",
+      "community": 4,
+      "norm_label": "part21textparseradapter.groovy"
+    },
+    {
+      "label": "readFile()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/Part21TextParserAdapter.groovy",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "step_part21textparseradapter_readfile",
+      "community": 4,
+      "norm_label": "readfile()"
+    },
+    {
+      "label": "buildEntityMap()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/Part21TextParserAdapter.groovy",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "step_part21textparseradapter_buildentitymap",
+      "community": 4,
+      "norm_label": "buildentitymap()"
+    },
+    {
+      "label": "resolveAssemblyTree()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/Part21TextParserAdapter.groovy",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "step_part21textparseradapter_resolveassemblytree",
+      "community": 4,
+      "norm_label": "resolveassemblytree()"
+    },
+    {
+      "label": "findEntityPointingTo()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/Part21TextParserAdapter.groovy",
+      "source_location": "L157",
+      "_origin": "ast",
+      "id": "step_part21textparseradapter_findentitypointingto",
+      "community": 4,
+      "norm_label": "findentitypointingto()"
+    },
+    {
+      "label": "StepDocument.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepDocument.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "step_stepdocument",
+      "community": 10,
+      "norm_label": "stepdocument.groovy"
+    },
+    {
+      "label": "StepDocument",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepDocument.groovy",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "step_stepdocument_stepdocument",
+      "community": 10,
+      "norm_label": "stepdocument"
+    },
+    {
+      "label": ".StepDocument()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepDocument.groovy",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "step_stepdocument_stepdocument_stepdocument",
+      "community": 10,
+      "norm_label": ".stepdocument()"
+    },
+    {
+      "label": "StepFileParser.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepFileParser.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "step_stepfileparser",
+      "community": 5,
+      "norm_label": "stepfileparser.groovy"
+    },
+    {
+      "label": "StepFileParser",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepFileParser.groovy",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "step_stepfileparser_stepfileparser",
+      "community": 5,
+      "norm_label": "stepfileparser"
+    },
+    {
+      "label": ".StepFileParser()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepFileParser.groovy",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "step_stepfileparser_stepfileparser_stepfileparser",
+      "community": 5,
+      "norm_label": ".stepfileparser()"
+    },
+    {
+      "label": ".withAdapter()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepFileParser.groovy",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "step_stepfileparser_stepfileparser_withadapter",
+      "community": 5,
+      "norm_label": ".withadapter()"
+    },
+    {
+      "label": ".parse()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepFileParser.groovy",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "step_stepfileparser_stepfileparser_parse",
+      "community": 5,
+      "norm_label": ".parse()"
+    },
+    {
+      "label": "StepLibraryAdapter.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepLibraryAdapter.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "step_steplibraryadapter",
+      "community": 11,
+      "norm_label": "steplibraryadapter.groovy"
+    },
+    {
+      "label": "StepLibraryAdapter",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepLibraryAdapter.groovy",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "step_steplibraryadapter_steplibraryadapter",
+      "community": 11,
+      "norm_label": "steplibraryadapter"
+    },
+    {
+      "label": ".readFile()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepLibraryAdapter.groovy",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "step_steplibraryadapter_steplibraryadapter_readfile",
+      "community": 11,
+      "norm_label": ".readfile()"
+    },
+    {
+      "label": "StepParseException.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepParseException.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "step_stepparseexception",
+      "community": 12,
+      "norm_label": "stepparseexception.groovy"
+    },
+    {
+      "label": "StepParseException",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepParseException.groovy",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "step_stepparseexception_stepparseexception",
+      "community": 12,
+      "norm_label": "stepparseexception"
+    },
+    {
+      "label": ".StepParseException()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepParseException.groovy",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "step_stepparseexception_stepparseexception_stepparseexception",
+      "community": 12,
+      "norm_label": ".stepparseexception()"
+    },
+    {
+      "label": "StepProduct.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepProduct.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "step_stepproduct",
+      "community": 8,
+      "norm_label": "stepproduct.groovy"
+    },
+    {
+      "label": "StepProduct",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepProduct.groovy",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "step_stepproduct_stepproduct",
+      "community": 8,
+      "norm_label": "stepproduct"
+    },
+    {
+      "label": ".StepProduct()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepProduct.groovy",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "step_stepproduct_stepproduct_stepproduct",
+      "community": 8,
+      "norm_label": ".stepproduct()"
+    },
+    {
+      "label": ".isLeaf()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepProduct.groovy",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "step_stepproduct_stepproduct_isleaf",
+      "community": 8,
+      "norm_label": ".isleaf()"
+    },
+    {
+      "label": "StepShape.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepShape.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "step_stepshape",
+      "community": 6,
+      "norm_label": "stepshape.groovy"
+    },
+    {
+      "label": "StepShape",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepShape.groovy",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "step_stepshape_stepshape",
+      "community": 6,
+      "norm_label": "stepshape"
+    },
+    {
+      "label": ".StepShape()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepShape.groovy",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "step_stepshape_stepshape_stepshape",
+      "community": 6,
+      "norm_label": ".stepshape()"
+    },
+    {
+      "label": ".getVertexCount()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepShape.groovy",
+      "source_location": "L74",
+      "_origin": "ast",
+      "id": "step_stepshape_stepshape_getvertexcount",
+      "community": 6,
+      "norm_label": ".getvertexcount()"
+    },
+    {
+      "label": ".getTriangleCount()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StepShape.groovy",
+      "source_location": "L75",
+      "_origin": "ast",
+      "id": "step_stepshape_stepshape_gettrianglecount",
+      "community": 6,
+      "norm_label": ".gettrianglecount()"
+    },
+    {
+      "label": "StubStepLibraryAdapter.groovy",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StubStepLibraryAdapter.groovy",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "step_stubsteplibraryadapter",
+      "community": 9,
+      "norm_label": "stubsteplibraryadapter.groovy"
+    },
+    {
+      "label": "StubStepLibraryAdapter",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StubStepLibraryAdapter.groovy",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "step_stubsteplibraryadapter_stubsteplibraryadapter",
+      "community": 9,
+      "norm_label": "stubsteplibraryadapter"
+    },
+    {
+      "label": ".readFile()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StubStepLibraryAdapter.groovy",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "step_stubsteplibraryadapter_stubsteplibraryadapter_readfile",
+      "community": 9,
+      "norm_label": ".readfile()"
+    },
+    {
+      "label": ".extractSchema()",
+      "file_type": "code",
+      "source_file": "main/groovy/step/StubStepLibraryAdapter.groovy",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "step_stubsteplibraryadapter_stubsteplibraryadapter_extractschema",
+      "community": 9,
+      "norm_label": ".extractschema()"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "geometry_boundingbox",
+      "target": "geometry_boundingbox_boundingbox",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "geometry_boundingbox_boundingbox",
+      "target": "geometry_boundingbox_boundingbox_boundingbox",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "geometry_boundingbox_boundingbox",
+      "target": "geometry_boundingbox_boundingbox_getcentre",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "geometry_boundingbox_boundingbox",
+      "target": "geometry_boundingbox_boundingbox_getenvelopevolume",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "geometry_boundingbox_boundingbox",
+      "target": "geometry_boundingbox_boundingbox_getsizex",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "geometry_boundingbox_boundingbox",
+      "target": "geometry_boundingbox_boundingbox_getsizey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/BoundingBox.groovy",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "geometry_boundingbox_boundingbox",
+      "target": "geometry_boundingbox_boundingbox_getsizez",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/BoundingBoxCalculator.groovy",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "geometry_boundingboxcalculator",
+      "target": "geometry_boundingboxcalculator_boundingboxcalculator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/BoundingBoxCalculator.groovy",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "geometry_boundingboxcalculator_boundingboxcalculator",
+      "target": "geometry_boundingboxcalculator_boundingboxcalculator_compute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/BoundingBoxCalculator.groovy",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "geometry_boundingboxcalculator_boundingboxcalculator",
+      "target": "geometry_boundingboxcalculator_boundingboxcalculator_computeall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/BoundingBoxCalculator.groovy",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "geometry_boundingboxcalculator_boundingboxcalculator",
+      "target": "geometry_boundingboxcalculator_boundingboxcalculator_computefromvertices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/BoundingBoxCalculator.groovy",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "geometry_boundingboxcalculator_boundingboxcalculator_compute",
+      "target": "geometry_boundingboxcalculator_boundingboxcalculator_computefromvertices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/BoundingBoxCalculator.groovy",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "geometry_boundingboxcalculator_boundingboxcalculator_computeall",
+      "target": "geometry_boundingboxcalculator_boundingboxcalculator_compute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "main/groovy/geometry/InertiaCalculator.groovy",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "geometry_inertiacalculator_inertiacalculator_cuboidfallback",
+      "target": "geometry_boundingboxcalculator_boundingboxcalculator_computefromvertices"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "geometry_masspropertiescalculator_masspropertiescalculator_compute",
+      "target": "geometry_boundingboxcalculator_boundingboxcalculator_computefromvertices"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/InertiaCalculator.groovy",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "geometry_inertiacalculator",
+      "target": "geometry_inertiacalculator_inertiacalculator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/InertiaCalculator.groovy",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "geometry_inertiacalculator_inertiacalculator",
+      "target": "geometry_inertiacalculator_inertiacalculator_compute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/InertiaCalculator.groovy",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "geometry_inertiacalculator_inertiacalculator",
+      "target": "geometry_inertiacalculator_inertiacalculator_cuboidfallback",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/InertiaCalculator.groovy",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "geometry_inertiacalculator_inertiacalculator_compute",
+      "target": "geometry_inertiacalculator_inertiacalculator_cuboidfallback",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/InertiaTensor.groovy",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "geometry_inertiatensor",
+      "target": "geometry_inertiatensor_inertiatensor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/InertiaTensor.groovy",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "geometry_inertiatensor_inertiatensor",
+      "target": "geometry_inertiatensor_inertiatensor_inertiatensor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/InertiaTensor.groovy",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "geometry_inertiatensor_inertiatensor",
+      "target": "geometry_inertiatensor_inertiatensor_toflatmatrix",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/MassProperties.groovy",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "geometry_massproperties",
+      "target": "geometry_massproperties_massproperties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/MassProperties.groovy",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "geometry_massproperties_massproperties",
+      "target": "geometry_massproperties_massproperties_hasdensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/MassProperties.groovy",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "geometry_massproperties_massproperties",
+      "target": "geometry_massproperties_massproperties_hasmass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/MassProperties.groovy",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "geometry_massproperties_massproperties",
+      "target": "geometry_massproperties_massproperties_massproperties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "geometry_masspropertiescalculator",
+      "target": "geometry_masspropertiescalculator_masspropertiescalculator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "geometry_masspropertiescalculator_masspropertiescalculator",
+      "target": "geometry_masspropertiescalculator_masspropertiescalculator_centreofmass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "geometry_masspropertiescalculator_masspropertiescalculator",
+      "target": "geometry_masspropertiescalculator_masspropertiescalculator_compute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "geometry_masspropertiescalculator_masspropertiescalculator",
+      "target": "geometry_masspropertiescalculator_masspropertiescalculator_signedvolume",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L130",
+      "weight": 1.0,
+      "source": "geometry_masspropertiescalculator_masspropertiescalculator",
+      "target": "geometry_masspropertiescalculator_masspropertiescalculator_vertexcentroid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "geometry_masspropertiescalculator_masspropertiescalculator_compute",
+      "target": "geometry_masspropertiescalculator_masspropertiescalculator_centreofmass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "geometry_masspropertiescalculator_masspropertiescalculator_compute",
+      "target": "geometry_masspropertiescalculator_masspropertiescalculator_signedvolume",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/MassPropertiesCalculator.groovy",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "geometry_masspropertiescalculator_masspropertiescalculator_centreofmass",
+      "target": "geometry_masspropertiescalculator_masspropertiescalculator_vertexcentroid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/geometry/PmiExtractor.groovy",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "geometry_pmiextractor",
+      "target": "geometry_pmiextractor_extract",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/server/ViewerServer.groovy",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "server_viewerserver",
+      "target": "server_viewerserver_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/Part21TextParserAdapter.groovy",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "step_part21textparseradapter",
+      "target": "step_part21textparseradapter_buildentitymap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/Part21TextParserAdapter.groovy",
+      "source_location": "L157",
+      "weight": 1.0,
+      "source": "step_part21textparseradapter",
+      "target": "step_part21textparseradapter_findentitypointingto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/Part21TextParserAdapter.groovy",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "step_part21textparseradapter",
+      "target": "step_part21textparseradapter_readfile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/Part21TextParserAdapter.groovy",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "step_part21textparseradapter",
+      "target": "step_part21textparseradapter_resolveassemblytree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/Part21TextParserAdapter.groovy",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "step_part21textparseradapter_readfile",
+      "target": "step_part21textparseradapter_buildentitymap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/Part21TextParserAdapter.groovy",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "step_part21textparseradapter_readfile",
+      "target": "step_part21textparseradapter_resolveassemblytree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "main/groovy/step/Part21TextParserAdapter.groovy",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "step_part21textparseradapter_readfile",
+      "target": "step_stubsteplibraryadapter_stubsteplibraryadapter_extractschema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/Part21TextParserAdapter.groovy",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "step_part21textparseradapter_resolveassemblytree",
+      "target": "step_part21textparseradapter_findentitypointingto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepDocument.groovy",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "step_stepdocument",
+      "target": "step_stepdocument_stepdocument",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepDocument.groovy",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "step_stepdocument_stepdocument",
+      "target": "step_stepdocument_stepdocument_stepdocument",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepFileParser.groovy",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "step_stepfileparser",
+      "target": "step_stepfileparser_stepfileparser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepFileParser.groovy",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "step_stepfileparser_stepfileparser",
+      "target": "step_stepfileparser_stepfileparser_parse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepFileParser.groovy",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "step_stepfileparser_stepfileparser",
+      "target": "step_stepfileparser_stepfileparser_stepfileparser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepFileParser.groovy",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "step_stepfileparser_stepfileparser",
+      "target": "step_stepfileparser_stepfileparser_withadapter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepLibraryAdapter.groovy",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "step_steplibraryadapter",
+      "target": "step_steplibraryadapter_steplibraryadapter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepLibraryAdapter.groovy",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "step_steplibraryadapter_steplibraryadapter",
+      "target": "step_steplibraryadapter_steplibraryadapter_readfile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepParseException.groovy",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "step_stepparseexception",
+      "target": "step_stepparseexception_stepparseexception",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepParseException.groovy",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "step_stepparseexception_stepparseexception",
+      "target": "step_stepparseexception_stepparseexception_stepparseexception",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepProduct.groovy",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "step_stepproduct",
+      "target": "step_stepproduct_stepproduct",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepProduct.groovy",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "step_stepproduct_stepproduct",
+      "target": "step_stepproduct_stepproduct_isleaf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepProduct.groovy",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "step_stepproduct_stepproduct",
+      "target": "step_stepproduct_stepproduct_stepproduct",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepShape.groovy",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "step_stepshape",
+      "target": "step_stepshape_stepshape",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepShape.groovy",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "step_stepshape_stepshape",
+      "target": "step_stepshape_stepshape_gettrianglecount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepShape.groovy",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "step_stepshape_stepshape",
+      "target": "step_stepshape_stepshape_getvertexcount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StepShape.groovy",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "step_stepshape_stepshape",
+      "target": "step_stepshape_stepshape_stepshape",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StubStepLibraryAdapter.groovy",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "step_stubsteplibraryadapter",
+      "target": "step_stubsteplibraryadapter_stubsteplibraryadapter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StubStepLibraryAdapter.groovy",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "step_stubsteplibraryadapter_stubsteplibraryadapter",
+      "target": "step_stubsteplibraryadapter_stubsteplibraryadapter_extractschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StubStepLibraryAdapter.groovy",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "step_stubsteplibraryadapter_stubsteplibraryadapter",
+      "target": "step_stubsteplibraryadapter_stubsteplibraryadapter_readfile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "main/groovy/step/StubStepLibraryAdapter.groovy",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "step_stubsteplibraryadapter_stubsteplibraryadapter_readfile",
+      "target": "step_stubsteplibraryadapter_stubsteplibraryadapter_extractschema",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "b666b8fa6a03e47debd2642c7afd36f90adfb889"
+}

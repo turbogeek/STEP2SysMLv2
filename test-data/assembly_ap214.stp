@@ -1,0 +1,35 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('AP214 Assembly Test'),'2;1');
+FILE_NAME('assembly_ap214.stp','2023-10-25T12:00:00',('Author'),('Company'),'preprocessor','system','authorization');
+FILE_SCHEMA(('AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }'));
+ENDSEC;
+DATA;
+
+/* Root Assembly */
+#10 = PRODUCT('Root_Assy','Main Assembly','The top level assembly',(#1));
+#11 = PRODUCT_DEFINITION_FORMATION('1.0','Initial Release',#10);
+#12 = PRODUCT_DEFINITION('design','',#11,#2);
+
+/* Child Part 1 */
+#20 = PRODUCT('Child_1','Left Bracket','A bracket component',(#1));
+#21 = PRODUCT_DEFINITION_FORMATION('1.0','Initial Release',#20);
+#22 = PRODUCT_DEFINITION('design','',#21,#2);
+
+/* Child Part 2 */
+#30 = PRODUCT('Child_2','Right Bracket','Another bracket component',(#1));
+#31 = PRODUCT_DEFINITION_FORMATION('1.0','Initial Release',#30);
+#32 = PRODUCT_DEFINITION('design','',#31,#2);
+
+/* Assembly Relationships */
+/* Root -> Child 1 */
+#40 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('NAUO_1','Instance 1',#12,#22,$);
+/* Root -> Child 2 */
+#41 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('NAUO_2','Instance 2',#12,#32,$);
+
+/* Dummy contexts to keep references somewhat valid looking if parsed */
+#1 = PRODUCT_CONTEXT('','',#0);
+#2 = PRODUCT_DEFINITION_CONTEXT('part definition',#0,'design');
+
+ENDSEC;
+END-ISO-10303-21;
