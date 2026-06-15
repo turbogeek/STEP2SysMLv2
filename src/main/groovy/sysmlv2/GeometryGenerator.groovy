@@ -36,7 +36,7 @@ class GeometryGenerator {
             sb.append("        part ${shapePartName} {\n")
             
             shape.hulls.eachWithIndex { hull, hIdx ->
-                sb.append("            part hull_${hIdx} :> Polyhedron {\n")
+                sb.append("            part hull_${hIdx} : Polyhedron {\n")
                 
                 // Format vertices as a flat list
                 sb.append("                :>> vertices = (\n")
