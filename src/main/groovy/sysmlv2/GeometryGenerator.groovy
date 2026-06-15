@@ -13,10 +13,16 @@ class GeometryGenerator {
         StringBuilder sb = new StringBuilder()
         
         sb.append("package ${packageName} {\n")
+        sb.append("    private import ScalarValues::*;\n")
         sb.append("    private import Geometry::*;\n")
         sb.append("    private import ISQ::*;\n")
         sb.append("    public import MaterialsLibrary::*;\n")
         sb.append("    public import MassCalculations::*;\n\n")
+        
+        sb.append("    part def Polyhedron {\n")
+        sb.append("        attribute vertices : Real[0..*];\n")
+        sb.append("        attribute faces : Integer[0..*];\n")
+        sb.append("    }\n\n")
         
         sb.append("    part root {\n")
         

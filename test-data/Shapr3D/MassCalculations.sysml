@@ -1,4 +1,5 @@
 package MassCalculations {
+    private import ScalarValues::*;
     private import ISQ::*;
     private import SI::*;
     public import MaterialsLibrary::*;

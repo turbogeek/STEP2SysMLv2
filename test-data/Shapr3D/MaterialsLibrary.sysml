@@ -1,4 +1,5 @@
 package MaterialsLibrary {
+    private import ScalarValues::*;
     private import ISQ::*;
     private import SI::*;
 
