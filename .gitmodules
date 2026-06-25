@@ -1,0 +1,9 @@
+[submodule "submodules/SysMLv2CheatSheet"]
+	path = submodules/SysMLv2CheatSheet
+	url = https://github.com/turbogeek/SysMLv2CheatSheet.git
+[submodule "submodules/sysml-validator"]
+	path = submodules/sysml-validator
+	url = https://github.com/turbogeek/sysmlv2-validator.git
+[submodule "submodules/TutorialForCatiaMagicApiMCP"]
+	path = submodules/TutorialForCatiaMagicApiMCP
+	url = https://github.com/turbogeek/TutorialForCatiaMagicApiMCP.git

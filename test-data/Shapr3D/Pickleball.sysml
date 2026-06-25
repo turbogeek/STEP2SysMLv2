@@ -4,7 +4,7 @@ package Pickleball {
 
     part root {
         part root_0 {
-            part hull_0 :> Polyhedron {
+            part hull_0 : Polyhedron {
                 :>> vertices = (
                     -36.000000 [mm], 0.000000 [mm], 0.000000 [mm], -36.000000 [mm], 0.000000 [mm], 0.000000 [mm], 
                     -33.259663 [mm], 0.000000 [mm], -13.776604 [mm], -25.455844 [mm], 0.000000 [mm], -25.455844 [mm], 
